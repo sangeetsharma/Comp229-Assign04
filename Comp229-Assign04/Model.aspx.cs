@@ -44,6 +44,12 @@ namespace Comp229_Assign04
             willpower.Text = model.willpower.ToString();
             resiliance.Text = model.resiliance.ToString();
             wounds.Text = model.wounds.ToString();
+            abilitiesRepeater.DataSource = model.specialAbilities;
+            abilitiesRepeater.DataBind();
+            actionsRepeater.DataSource = model.actions;
+            actionsRepeater.DataBind();
+
+            update.PostBackUrl = "~/Update.aspx?name=" + model.name + "&faction=" + model.faction;
 
 
         }

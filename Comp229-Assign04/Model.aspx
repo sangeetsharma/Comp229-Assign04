@@ -90,8 +90,76 @@
                     <asp:Label runat="server" ID="wounds"></asp:Label>
                 </td>
             </tr>
-        </table>
+             <tr>
+                <td>Special Abilities: </td>
+                <td>
+                    <table>
+                        <asp:Repeater runat="server" ID="abilitiesRepeater">
+                            <ItemTemplate>
+                                <tr>
+                                    <td>
+                                        <asp:Label runat="server" Text="Name: " Font-Bold="true"></asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:Label runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "name") %>'></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:Label runat="server" Text="Description: " Font-Bold="true"></asp:Label>
 
+                                    </td>
+                                    <td>
+                                        <asp:Label runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "description") %>'></asp:Label>
+                                    </td>
+                                </tr>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>Actions: </td>
+                <td>
+                    <table>
+                        <asp:Repeater runat="server" ID="actionsRepeater">
+                            <ItemTemplate>
+                                <tr>
+                                    <td>
+                                        <asp:Label runat="server" Font-Bold="true" Text="Name: "></asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:Label runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "name") %>'></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:Label runat="server" Font-Bold="true" Text="Type: "></asp:Label>
+
+                                    </td>
+                                    <td>
+                                        <asp:Label runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "type") %>'></asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:Label runat="server" Font-Bold="true" Text="Rating"></asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:Label runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "rating") %>'></asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:Label runat="server" Font-Bold="true" Text="Range"></asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:Label runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "range") %>'></asp:Label>
+                                    </td>
+                                </tr>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <asp:Button ID="update" runat="server" Text="Update" />
     </div>
     <div style="clear:both"></div>
 </asp:Content>

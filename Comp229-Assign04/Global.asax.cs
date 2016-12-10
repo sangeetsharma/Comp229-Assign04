@@ -16,6 +16,7 @@ namespace Comp229_Assign04
     public class Global : HttpApplication
     {
         public static List<Model.Class1> dataModel;
+        
 
         void Application_Start(object sender, EventArgs e)
         {
